@@ -21,6 +21,8 @@ chatbot = ChatBot(
 )
 
 chatbot.train("chatterbot.corpus.english.greetings")
+
+chatbot.trainer.export_for_training("./exportedGreeting.yml")
 response = chatbot.get_response("Hello")
 
 print(response)
