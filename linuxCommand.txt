@@ -1,3 +1,4 @@
+www.it211.com.cn
 1.mkdir -p
 
 2.rmdir -p a/ab/abc/abcd , if some file in one of folder,
@@ -82,11 +83,92 @@ chmod 000 a.txt (grant the lowest permission to the file)
 
 
 
+15. file command, used for checking file type
+example: file [file name]
+
+16. diff command, used for comparing file content.
+
+example: diff [file1] [file2]
+this command is not convient.
+
+so it's suggested using meld/beyond compare tool
+
+sudo apt install meld -- install meld
+
+17. find command, used for find some file
+ find [file location] -name "[file name]"
+example: find /home -name "a.txt"
+
+if want to find how many files in home path?
+find ~ -name "a.txt"
+find ~ -name "*.txt"
+
+18. grep command, used for find file according to content.
+command format: grep [content] [option] [filename]/path
+option: -n (show row line)
+	-R/ -r (recursive search file)
+
+man grep
+if need to search -R option, input /-R to locate the -R option description.
+
+example: grep "python" *  (* mean search current file/folder )
+grep "python" -n *  (show row line about 'python' content in files)
+
+grep "python" -r -n *
+grep "python" -nR *
+
+execise: find files under /etc location with "python" chractors
+grep "python" -nR /home/hur2/Desktop
 
 
+19. file content check command
+ 1). cat command -- show file content as standard display output(display file content)
+	command format :  cat file1 file2 file3 ...
+	example: cat a.txt
+
+ 2). more command -- display file content for paging 
+using Space key to scroll next page(q- quit),Enter key to next line, but it's not supported for scroll up paging.
+
+format: more file1
+
+ 3). less command -- display file content for paging (can scroll previous page or next page)
+ format: less file1
+operations: 
+	q ---- quit
+	j ---- next page
+	k ---- prevoice page
+	Space ---- next page
+	Enter ---- next line
+
+ 4). pipline command  | 
+example: cat /ect/passwd | grep aaa -n
+cat /ext/passwd | grep aaa | wc -l  (wc -- word char, l -- show line)
+
+20. file redirection
+
+a).standart output
+
+find /usr -name "a.txt" > fileAResult.txt   ---- generate a fileAResult.txt file to keep the find result.
+
+find /usr -name "a.txt" >> fileAResult.txt  ---- append the end of fileAResult.txt file of the find result.
+
+b).standart error output
+   command format: 2>   
+		   2>>
+example : find /sur -name "subl" 2>error.txt
+find /etc -name "passwd" 2> error.txt > result.txt  ----- input the result right information into result.txt file and error into error.txt.
 
 
+c). redirection all output
+   command format: &>
+		   &>>
+redirect all standart and error output into a file
+example: find /etc -name "passwd" &>all.txt
 
+execise:
+	find all files named ls and input the result into result.txt and error for error.txt
+	$ find /usr -name "ls" >result.txt 2>error.txt
+	$ find /usr -name "ls" &>allResult.txt 
 
 
 
