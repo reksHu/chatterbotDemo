@@ -1,0 +1,113 @@
+1.mkdir -p
+
+2.rmdir -p a/ab/abc/abcd , if some file in one of folder,
+the folder will not be deleted.
+
+3touch
+
+  if the file is not existed, will create a empty file.
+  if the file is existed, will update the file modify date.
+4touch file1 file2
+
+5.ls --help
+
+6.man command
+   provide command operation manual text information
+example:man ls
+
+mouse scrol, j(scroll down), k (scroll up), q(quit)
+
+7.history command
+   provide the history command which end user has inputed.
+example: history
+   if you want to execute one of history commands, run !line ID
+
+8. cp command
+
+9. mv command
+
+10. clear command
+    Ctrl+L is also clear the screen command
+
+
+11, vim
+command modal and editable modal
+
+:q -- exit
+:q! -- no save and exit
+:w  save the changes
+:w [file name] -- save to the file (save as)
+:wq  -- save and exit
+:w! -- mandatory saving
+
+12. notepad++
+run the notepad tool:
+notepadqq<Enter>
+notepadqq [file name]<Enter>
+
+13. sublime text editor
+run the sublime tool:
+subl<Enter>
+subl [file name]<Enter>
+
+
+14. check file permission
+ ls -l
+ r -- read permission
+ w -- write permission
+ x -- execute permission
+ - -- no permission
+
+file permission group
+user permission & group permission  and other
+
+the higest permission : rwxrwxrwx
+the lowest permission : ---------
+
+chmod command: update the file permission
+chmod [permission format] [filename]/[folder]
+
+permission format :
+	u (user name/file owner)
+	g (group user)
+	o (other users)
+	a (all users)
+	+ (add user permission)
+	- (remove permission)
+	777 (the highest permission)
+	000 (the lowest permission)
+example:
+chmod o-r a.txt   (remove othsers user read permission)
+chmod 000 a.txt (grant the lowest permission to the file)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
